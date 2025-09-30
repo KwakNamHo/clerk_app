@@ -28,8 +28,10 @@ export default function Header() {
                 <SignUpButton />
               </div>
             </SignedOut>
+
             <SignedIn>
               <div className="flex items-center space-x-4 text-gray-300">
+                <Link href="/repos">Repos</Link>
                 <Link href="/dashboard">Dashboard-S</Link>
                 <Link href="/dashboard-c">Dashboard-C</Link>
                 <UserButton afterSignOutUrl="/" />
