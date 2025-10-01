@@ -6,7 +6,19 @@ import { FaStar, FaCodeBranch, FaEye } from 'react-icons/fa'
 const username = 'KwakNamHo'
 
 export default async function api() {
+  //1.SSG
   const response = await fetch(`https://api.github.com/users/${username}/repos`)
+  //2.SSR
+  // const response = await fetch(
+  //   `https://api.github.com/users/${username}/repos`,
+  //   { cache: 'no-store' }
+  // )
+  //3.ISR
+  // const response = await fetch(
+  //   `https://api.github.com/users/${username}/repos`,
+  //   { next: { revalidate: 60 } }
+  // )
+  //const response = await fetch(`https://api.github.com/users/${username}/repos`, {next: {revalidate: 10}})
   await new Promise((resolve) => setTimeout(resolve, 1000))
   const repos = await response.json()
   //console.log(repos)
@@ -18,7 +30,7 @@ export default async function api() {
       <ul>
         {repos.map((repo: Repository) => (
           <li key={repo.id} className="bg-gray-100 m-4 p-4 rounded-md">
-            <Link href={`https://github.com/${username}/${repo.name}`}>
+            <Link href={`/repos/${repo.name}`}>
               <h3 className="text-xl font-bold">{repo.name}</h3>
               <p>{repo.dscription}</p>
               <div className="flex justify-between items-center mt-2">
