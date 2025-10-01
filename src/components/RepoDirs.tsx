@@ -1,3 +1,4 @@
+import { githubUsername } from '@/types/constants'
 import { GithubContent } from '@/types/github'
 import Link from 'next/link'
 import React from 'react'
@@ -5,9 +6,8 @@ import React from 'react'
 interface RepoProps {
   name: string
 }
-
+const username = githubUsername
 export default async function RepoDirs({ name }: RepoProps) {
-  const username = 'Kwaknamho'
   await new Promise((resolve) => setTimeout(resolve, 1000))
   const response = await fetch(
     `https://api.github.com/repos/${username}/${name}/contents`

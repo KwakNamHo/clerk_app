@@ -1,3 +1,4 @@
+import { githubUsername } from '@/types/constants'
 import Link from 'next/link'
 import React from 'react'
 import { FaCodeBranch, FaEye, FaStar } from 'react-icons/fa'
@@ -5,6 +6,8 @@ import { FaCodeBranch, FaEye, FaStar } from 'react-icons/fa'
 interface RepoProps {
   name: string
 }
+
+const username = githubUsername
 
 export default async function Repo({ name }: RepoProps) {
   const username = 'Kwaknamho'

@@ -1,9 +1,10 @@
+import { githubUsername } from '@/types/constants'
 import { Repository } from '@/types/repo'
 import Link from 'next/link'
 import React from 'react'
 import { FaStar, FaCodeBranch, FaEye } from 'react-icons/fa'
 
-const username = 'KwakNamHo'
+const username = githubUsername
 
 export default async function api() {
   //1.SSG
