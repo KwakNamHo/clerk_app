@@ -10,7 +10,6 @@ interface RepoProps {
 const username = githubUsername
 
 export default async function Repo({ name }: RepoProps) {
-  const username = 'Kwaknamho'
   await new Promise((resolve) => setTimeout(resolve, 1000))
 
   const response = await fetch(
